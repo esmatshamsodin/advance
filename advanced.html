@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ADVANCED</title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!--<div class="container">
+		<h2>animated progress bar</h2>
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+      		60%
+    </div>
+		</div>-->
+		<div id="MN" class="container">
+
+		</div>
+
+		<p id="test"></p>
+	</div>
+	<div class="container">
+	<div class='progress progress-striped active' width="500">
+		<div class='progress-bar progress-bar-color' id='bar' role='progressbar' style='width: 0%;'>
+			
+		</div>
+	</div>
+</div>
+	<script>
+		var array=[20,60,90,30,100];
+	
+			for(var i=0;i<array.length;i++)
+			{
+				var place=document.getElementById("MN");
+				place.innerHTML+="<div class='progress'><div class='progress-bar progress-bar-striped active' role='progress-bar' style='width: "+array[i]+ "%'aria-valuenow='" +array[i]+"'aria-valuemin='0' aria-valuemax='100'></div></div>";
+
+			}
+			var progress = setInterval(function () {
+		    var $bar = $("#bar");
+
+    		if ($bar.width() >= 600) {
+        	clearInterval(progress);
+    		} else {
+        	$bar.width($bar.width() + 60);
+    		}
+    		$bar.text($bar.width() / 6 + "%");
+    		if ($bar.width() / 6 == 100){
+      		$bar.text($bar.width() / 6 + "%");
+   			 }
+			}, 800);
+
+
+	</script>
+</body>
+</html>
